@@ -1,0 +1,173 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_PbQCHX12RA8RKugW",
+        "type": "tab",
+        "createdDate": "2021-10-09T11:17:38.455Z",
+        "relativeParentPath": "",
+        "label": "userdetailservice",
+        "disabled": false,
+        "info": "",
+        "generateNext": true,
+        "serviceName": "userdetailservice"
+    },
+    {
+        "id": "sd_gzhHgRFOKTdVV1SG",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_PbQCHX12RA8RKugW",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "insertuserdata",
+        "path": "/insertuserdata",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "httpOptions": {
+            "/insertuserdata": {
+                "post": {
+                    "summary": "",
+                    "description": "",
+                    "consumes": [],
+                    "produces": [],
+                    "parameters": [],
+                    "responses": {}
+                }
+            }
+        },
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "category": "HTTP",
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "x": 65,
+        "y": 60,
+        "wires": [
+            [
+                "sd_epAguVC5PGNzBXPA"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "userdetailservice",
+        "functionName": "sd_gzhHgRFOKTdVV1SG"
+    },
+    {
+        "id": "sd_epAguVC5PGNzBXPA",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_PbQCHX12RA8RKugW",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\nconsole.log(bh.input.body)\nbh.local.query = 'INSERT INTO userdetails(name ,email ,phonenumber, dob, address, pincode,city, state) VALUES ('+\n\"'\" + bh.input.body.name + \"'\" + ',' + \"'\" + bh.input.body.email + \"'\" + ',' + \"'\" + bh.input.body.phonenumber + \"'\" + ',' + \"'\" + bh.input.body.dob + \"'\" + ',' + \"'\" + bh.input.body.address + \"'\" + ',' + \"'\" + bh.input.body.pincode + \"'\" + ',' + \"'\" + bh.input.body.city + \"'\" + ',' + \"'\" + bh.input.body.state +\"'\" +');'",
+        "functionName": "sd_epAguVC5PGNzBXPA",
+        "category": "Function",
+        "__n_excludedFromValidation__": {},
+        "x": 200,
+        "y": 60,
+        "wires": [
+            [
+                "sd_VDD8BFVcleIiX75f"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_VDD8BFVcleIiX75f",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_PbQCHX12RA8RKugW",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_0DFdrBziU26BWJ82",
+        "queryType": "",
+        "resultMap": {
+            "type": "bh.local",
+            "value": "result"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh.local",
+            "value": "query"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "paramMappingObj": {},
+        "dbType": "postgres",
+        "functionName": "sd_VDD8BFVcleIiX75f",
+        "category": "Storage",
+        "__n_excludedFromValidation__": {},
+        "x": 325,
+        "y": 60,
+        "wires": [
+            [
+                "sd_BT9CelWw3pJZdFNV"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_BT9CelWw3pJZdFNV",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_PbQCHX12RA8RKugW",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "str",
+            "value": "Inserted data successfully",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "responseMapping": {
+            "status": 200,
+            "obj": "\"Inserted data successfully\"",
+            "send": "\"Inserted data successfully\""
+        },
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "editableListData": {
+            "headers": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_BT9CelWw3pJZdFNV",
+        "category": "HTTP",
+        "__n_excludedFromValidation__": {},
+        "x": 445,
+        "y": 60,
+        "wires": [],
+        "generateNext": false,
+        "generated": true
+    }
+]

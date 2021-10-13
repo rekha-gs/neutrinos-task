@@ -1,0 +1,47 @@
+/*Importing default angular material css theme. */
+
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "nDefaults.scss";
+
+    /* form */
+    .form-login{
+        padding:10px;
+        width:100%;
+        padding-top:10px;
+    }
+
+    /* col */
+    .col{
+    height:100%;
+    padding:15px 15px 0px 15px;
+    overflow-y:auto
+    }
+
+    /* col-img */
+    .col_img{
+        padding-top:5px; 
+        display: block;  
+        margin-left: auto;  
+        margin-right: auto;
+    }
+    
+
+    /* submit button */
+    .form-submit-button {
+     background:#329ea8;
+     color:rgb(12, 1, 1);
+     border:1pxsolid#eee;
+     border-radius:20px;
+     box-shadow:5px5px5px#eee;
+     text-shadow:none;
+    }
+    .form-submit-button:hover {
+     background:#016ABC;
+     color:black;
+     border:1pxsolid#eee;
+     border-radius:20px;
+     box-shadow:5px5px5px#eee;
+     text-shadow:none;
+    }
+
+

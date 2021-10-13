@@ -1,0 +1,13 @@
+{
+    "displayName": "LoginApp",
+    "appName": "loginapp",
+    "description": "Login page ",
+    "lastModified": "2021-10-08T16:58:35.764Z",
+    "imgSourcePath": "",
+    "version": "1.0.0",
+    "appType": "classic",
+    "templateName": "blank",
+    "createDate": "2021-10-08T16:58:34.720Z",
+    "analyticsId": "7993b102-1d3e-9764-5d88-2317b5cbb5d3",
+    "createdStudioVersion": "7.9.0"
+}

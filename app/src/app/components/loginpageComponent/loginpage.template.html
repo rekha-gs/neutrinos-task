@@ -1,0 +1,84 @@
+<div fxLayout="column wrap" class="col" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+  <div fxLayout="row wrap" style="height:100%;width:100%" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="column wrap" style="width:100%" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="column wrap" class="col_img" fxLayoutGap="5px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><img imgSrc="img2.jpg" style="width:500px;"></div>
+      <div fxLayout="column wrap" style="padding:2px; display: block; margin-left: auto;margin-right: auto;" fxLayoutGap="5px;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+        <h2 style="color:#ab1a60">
+          Registration Form</h2>
+      </div>
+      <form [formGroup]="sampleform">
+        <div fxLayout="column wrap" class="form-login" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+            <div style="font-size:15px;font-weight:bold;color:#ab1a60">
+              Name</div>
+            <mat-form-field style="padding:20px;" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Name" [required]="false" formControlName="name">
+              <mat-error align="start" *ngIf="sampleform.controls.name.errors?.required">Name required!</mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="column wrap" style="font-size:15px;font-weight:bold" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+            <div style="font-size:15px;font-weight:bold;color:#ab1a60">
+              Email</div>
+            <mat-form-field style="padding:20px;" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Email" [required]="false" formControlName="email">
+              <mat-error align="start" *ngIf="sampleform.controls.email.errors?.required">Email required!</mat-error>
+              <mat-error align="start" *ngIf="sampleform.controls.email.errors?.email">Email is invalid</mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+            <div style="font-size:15px;font-weight:bold;color:#ab1a60">
+              Phonenumber</div>
+            <mat-form-field style="padding:20px;" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="PhoneNumber" [required]="false" formControlName="phonenumber">
+              <mat-error align="start" *ngIf="sampleform.controls.phonenumber.errors?.required">Phonenumber required!</mat-error>
+              <mat-error align="start" *ngIf="sampleform.controls.phonenumber.errors?.pattern">Enter an 10 digit phonenumber!</mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+            <div style="font-size:15px;font-weight:bold;color:#ab1a60">
+              Date Of Birth</div>
+            <mat-form-field style="padding:20px;" [appearance]="&apos;fill&apos;">
+              <input matInput placeholder="DOB" [matDatepicker]="picker" formControlName="dob" [required]="false" [disabled]="false">
+              <mat-datepicker-toggle matSuffix [for]="picker" disabled="false"></mat-datepicker-toggle>
+              <mat-datepicker #picker [disabled]="false"></mat-datepicker>
+              <mat-error align="start" *ngIf="sampleform.controls.dob.errors?.required">DOB required!</mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+            <div style="font-size:15px;font-weight:bold;color:#ab1a60">
+              Address</div>
+            <mat-form-field style="padding:20px;" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Address" [required]="false" formControlName="address">
+              <mat-error align="start" *ngIf="sampleform.controls.address.errors?.required">Address required!</mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+            <div style="font-size:15px;font-weight:bold;color:#ab1a60">
+              Pincode</div>
+            <mat-form-field style="padding:20px;" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Pincode" [required]="false" formControlName="pincode">
+              <mat-error align="start" *ngIf="sampleform.controls.pincode.errors?.required">Pincode required!</mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+            <div style="font-size:15px;font-weight:bold;color:#ab1a60">
+              City/Village</div>
+            <mat-form-field style="padding:20px;" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="City/Village" [required]="false" formControlName="city">
+              <mat-error align="start" *ngIf="sampleform.controls.city.errors?.required">City required!</mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+            <div style="font-size:15px;font-weight:bold;color:#ab1a60">
+              State</div>
+            <mat-form-field style="padding:20px;" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="State" [required]="false" formControlName="state">
+              <mat-error align="start" *ngIf="sampleform.controls.state.errors?.required">State details required!</mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-raised-button class="form-submit-button" color="primary" (click)="onSubmit()" [disabled]="!sampleform.valid">Submit</button></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
